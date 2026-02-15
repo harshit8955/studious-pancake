@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Plant Details</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<h2>Plant Details</h2>
+</header>
+
+<div id="plantDetails"></div>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+const name=params.get("name");
+
+fetch("/api/plants")
+.then(res=>res.json())
+.then(data=>{
+const plant=data.find(p=>p.name===name);
+document.getElementById("plantDetails").innerHTML=`
+<div class="card">
+<img src="${plant.image}">
+<h3>${plant.name}</h3>
+<p>₹${plant.price}</p>
+<button onclick="addToCart('${plant.name}')">Add to Cart</button>
+</div>`;
+});
+</script>
+
+<script src="js/cart.js"></script>
+</body>
+</html>

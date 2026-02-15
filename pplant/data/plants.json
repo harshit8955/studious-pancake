@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Snake Plant",
+    "price": 300,
+    "category": "indoor",
+    "image": "https://via.placeholder.com/200"
+  },
+  {
+    "name": "Bonsai Tree",
+    "price": 800,
+    "category": "outdoor",
+    "image": "https://via.placeholder.com/200"
+  }
+]

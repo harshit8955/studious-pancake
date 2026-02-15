@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart | PUSHPAK</title>
+<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🌿 PUSHPAK</div>
+    <div class="header-controls">
+        <button id="themeToggle">🌙</button>
+        <button id="langBtn">हिंदी</button>
+        <a href="index.html">🏠</a>
+    </div>
+</header>
+
+<div class="container">
+<main>
+
+<h2 data-en="Your Cart" data-hi="आपका कार्ट">
+Your Cart
+</h2>
+
+<div id="cartItems"></div>
+
+<button onclick="clearCart()"
+data-en="Clear Cart"
+data-hi="कार्ट खाली करें">
+Clear Cart
+</button>
+
+</main>
+</div>
+
+<script src="/public/js/scripts.js"></script>
+<script src="/public/js/cart.js"></script>
+<script src="/public/js/theme.js"></script>
+<script src="/public/js/language.js"></script>
+<script src="/public/js/auth.js"></script>
+
+</body>
+</html>

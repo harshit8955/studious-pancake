@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login | PUSHPAK</title>
+<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+<header>
+<h2>🌿 PUSHPAK</h2>
+<div class="header-controls">
+<button id="themeToggle">🌙</button>
+<button id="langBtn">हिंदी</button>
+</div>
+</header>
+
+<div class="container">
+<div class="card" style="max-width:400px;margin:auto;">
+
+<h2 data-en="Login" data-hi="लॉगिन">Login</h2>
+
+<input id="email" placeholder="Email" class="input" required>
+<input id="password" type="password" placeholder="Password" class="input" required>
+
+<a href="/admin.html">
+  <button 
+    data-en="Register"
+    data-hi="रजिस्टर करें">
+    Register
+  </button>
+</a>
+
+
+<p id="loginMsg"></p>
+
+<p>
+<span data-en="Don't have account?"
+data-hi="खाता नहीं है?">
+Don't have account?
+</span>
+<a href="register.html"
+data-en="Register"
+data-hi="रजिस्टर करें">
+Register
+</a>
+</p>
+
+</div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/language.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

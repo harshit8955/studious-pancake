@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+
+</head>
+<body>
+    <header>
+        <h2>🌿 PUSHPAK - Admin Panel</h2>
+        <nav>
+        <a href="/index.html">Home</a>
+
+        <a href="/register.html">Sign up</a>
+        <a href="/login.html">Login</a>
+        <a href="#">About Us</a>
+    </nav>
+    <div class="search-box">
+        <input type="text" placeholder="Search plants...">
+        <button>Search</button>
+    </div>
+<div class="header-controls">
+<button id="themeToggle">🌙</button>
+<button id="langBtn">हिंदी</button>
+<a href="/cart.html">🛒</a>
+</div>
+    </header>
+    <div class="container">
+
+<aside class="sidebar">
+<h3 data-en="Admin Menu" data-hi="एडमिन मेनू">
+Admin Menu
+</h3>
+
+<ul>
+<li onclick="goToDashboard()"
+    data-en="Dashboard"
+    data-hi="डैशबोर्ड">
+    Dashboard
+</li>
+
+<li data-en="Add Product" data-hi="प्रोडक्ट जोड़ें">Add Product</li>
+<li data-en="Manage Products" data-hi="प्रोडक्ट प्रबंधन">Manage Products</li>
+<li data-en="Orders" data-hi="ऑर्डर">Orders</li>
+</ul>
+</aside>
+
+<main>
+
+<h2 data-en="Add New Plant"
+data-hi="नया पौधा जोड़ें">
+Add New Plant
+</h2>
+
+<input type="text"
+placeholder="Plant Name"
+class="input">
+
+<input type="number"
+placeholder="Price"
+class="input">
+
+<select class="input">
+<option>Indoor</option>
+<option>Outdoor</option>
+</select>
+
+<button
+data-en="Add Product"
+data-hi="प्रोडक्ट जोड़ें">
+Add Product
+</button>
+
+</main>
+</div>
+
+</body>
+</html>
+<script src="/public/js/scripts.js"></script>
+<script src="/public/js/theme.js"></script>
+<script src="/public/js/language.js"></script>
+<script src="/public/js/auth.js"></script>
+
+<script>
+function addPlant(){
+    fetch("/api/plants", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            price: document.getElementById("price").value,
+            category: document.getElementById("category").value,
+            image: document.getElementById("image").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+</script>
